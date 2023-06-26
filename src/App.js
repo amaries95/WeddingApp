@@ -15,6 +15,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Main/>} />
             <Route path="/login" element={<Login /> } />
+            <Route path="/admin" element={<Admin /> } />
           </Routes>
         </Col>
       </Row>

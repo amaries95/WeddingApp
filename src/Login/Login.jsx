@@ -1,14 +1,12 @@
 import { useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import { loginActions } from './../Store/login';
 import { BaseURL, UserLogin} from './../Shared/UrlConstants';
-import axios from 'axios';
+import React from 'react';
+import { decodeToken } from 'react-jwt';
 
 export default function Login () {
     const usernameInputRef = useRef();
     const passwordInputRef = useRef();
-    const loginDispatcher = useDispatch();
     const navigate = useNavigate();
 
     var [responseMessage, setResponseMessage] = useState(null);
@@ -24,54 +22,39 @@ export default function Login () {
             return;
         }
 
-        try {
+        var response = await fetch(BaseURL + UserLogin,
+        {
+            method: 'POST',
+            body: JSON.stringify({
+                userName: enteredUsername,
+                password: enteredPassword
+            }),
+            headers: {
+            'Content-Type': 'application/json',
+            'Accept': '*/*',
+            'Host': 'wedding-alexandrii-backend.azurewebsites.net',
+            }
+        });
 
-            const response = await fetch(BaseURL + UserLogin,
-                {
-                  method: 'POST',
-                  body: JSON.stringify({
-                        userName: "string",
-                        password: "string"
-                  }),
-                  headers: {
-                    'Content-Type': 'application/json; charset=UTF-8',
-                    'Accept': '*/*',
-                    'Connection': 'keep-alive',
-                    'Access-Control-Allow-Origin': '*',
-                    'Access-Control-Allow-Methods': 'GET, POST, OPTIONS, PUT, PATCH, DELETE',
-                    'Access-Control-Allow-Headers': 'x-access-token, Origin, X-Requested-With, Content-Type, Accept'
-                  }
-                });
+        var responseJson = await response.json();
 
-                // axios.post(BaseURL+UserLogin, {
-                //         userName: enteredUsername,
-                //         password: enteredPassword
-                //   }).then((res) => {
-                //     var responseJson = res.json();
-                // })
-
-
-
-                if(await response.status == 200)
-                {
-                    var responseJson = await response.json();
-        
-                    if(responseJson.result.data != null)
-                    {
-                        loginDispatcher(loginActions.saveToken(responseJson.result.data));
-                        loginDispatcher(loginActions.login());
-                        navigate("/admin");
-                    }
-                    else {
-                        setResponseMessage(responseJson.result.message);
-                    }
-                }
-          } catch (error) {
-            console.error(error);
-          }
-        
-
-       
+        if(await response.status === 200)
+        {
+            if(responseJson.data != null)
+            {
+                localStorage.setItem('token', responseJson.data);
+                localStorage.setItem('isAuth', 'true');
+                localStorage.setItem('expirationToken', decodeToken(responseJson.data).exp);
+                
+                navigate("/admin");
+            }
+            else {
+                setResponseMessage(responseJson.result.message);
+            }
+        }
+        else {
+            setResponseMessage(responseJson.message);
+        }
     }
 
     return (
@@ -87,9 +70,8 @@ export default function Login () {
                     <input type='password' ref={passwordInputRef}></input>
                 </div>
                 <button>Login</button>
+                {responseMessage && <label>{responseMessage}</label>}
             </form>
-            
-            {responseMessage && <label>{responseMessage}</label>}
         </>
     );
 } 
