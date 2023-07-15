@@ -1,5 +1,6 @@
 import style from './InvitationForm.module.css';
 import { useRef, useState } from 'react';
+import { Host, NewGuest, Https, Post } from '../../Shared/UrlConstants';
 
 export default function InvitationForm () {
     var yesCheckbox = useRef(null);
@@ -10,11 +11,51 @@ export default function InvitationForm () {
     var otherDetailsRef = useState(null);
 
     const [isShownFormDetails, setIsShownFormDetails] = useState(false);
+    const [validationMessage, setValidationMessage] = useState("");
 
     const onFormSubmit = (event) => {
         event.preventDefault();
+        submitForm();
+    }
 
+    const submitForm = async () => {
         
+        if(!(checkIfNotNullOrEmpty(nameRef)
+        && (isCheckBoxChecked(yesCheckbox)
+        || isCheckBoxChecked(noCheckbox))
+        && checkIfNotNullOrEmpty(nbrPersonRef)
+        && checkIfNotNullOrEmpty(veggieMenusRef)))
+        {
+            setValidationMessage("Va rugam sa completati toate campurile.");
+            return;
+        }
+    
+        var response = await fetch(Https + Host + NewGuest,
+        {
+            method: Post,
+            body: JSON.stringify({
+                name: nameRef.current.value,
+                numberOfGuests: nbrPersonRef.current.value,
+                isComing: yesCheckbox.current.checked === true ? true : false,
+                numberOfVeggiesMenus: veggieMenusRef.current.value,
+                otherDetails: otherDetailsRef.current.value
+            }),
+            headers: {
+            'Content-Type': 'application/json',
+            'Accept': '*/*',
+            'Host': Host,
+            }
+        });
+
+        if(await response.status === 200)
+        {
+            console.log("Successfully saved!");
+        }
+        else {
+            console.log("Something went wrong. please inform Alex Maries about the error.");
+            // afiseaza un thank you dragut
+            // clear all the fields
+        }
     }
 
     const onYesCheckboxSelected = (event) => {
@@ -29,6 +70,18 @@ export default function InvitationForm () {
 
         yesCheckbox.current.checked = !state;
         setIsShownFormDetails(!state);
+    }
+
+    const checkIfNotNullOrEmpty = (field) => {
+        if(field !== null)
+        {
+            var value = field.current.value;
+            return !(value === null || value.toString() === "");
+        }
+    }
+
+    const isCheckBoxChecked = (field) => {
+        return field.current.checked;
     }
 
     return (
@@ -53,17 +106,18 @@ export default function InvitationForm () {
                 {isShownFormDetails && <div>
                     <div>
                         <label>Numar de persoane</label>
-                        <input type='number' ref={nbrPersonRef}></input>
+                        <input type='number' ref={node => nbrPersonRef.current = node}></input>
                     </div>
                     <div>
                         <label>numar Meniuri vegetariene</label>
-                        <input type='number' ref={veggieMenusRef}></input>
+                        <input type='number' ref={node => veggieMenusRef.current = node }></input>
                     </div>
                     <div>
                         <label>Other details</label>
-                        <input type='text' ref={otherDetailsRef}></input>
+                        <input type='text' ref={node => otherDetailsRef.current = node}></input>
                     </div>
                 </div>}
+                {validationMessage && <p>{validationMessage}</p>}
                 <button>Trimite</button>
             </form>
         </div>

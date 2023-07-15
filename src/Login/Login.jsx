@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { BaseURL, UserLogin} from './../Shared/UrlConstants';
+import { Host, Https, Post, UserLogin} from './../Shared/UrlConstants';
 import React from 'react';
 import { decodeToken } from 'react-jwt';
 
@@ -22,9 +22,9 @@ export default function Login () {
             return;
         }
 
-        var response = await fetch(BaseURL + UserLogin,
+        var response = await fetch(Https + Host + UserLogin,
         {
-            method: 'POST',
+            method: Post,
             body: JSON.stringify({
                 userName: enteredUsername,
                 password: enteredPassword
@@ -32,7 +32,7 @@ export default function Login () {
             headers: {
             'Content-Type': 'application/json',
             'Accept': '*/*',
-            'Host': 'wedding-alexandrii-backend.azurewebsites.net',
+            'Host': Host,
             }
         });
 
