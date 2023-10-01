@@ -9,9 +9,10 @@ export default function Main() {
         <>
             <Header></Header>
             <section id=""><Home /></section>
-            <section id="weddingtimeline"><WeddingTimeline /></section>
-            <section id="location"><Location /></section>
-            <section id="invitationform"><InvitationForm /></section>
+            <section id="itinerariu"><WeddingTimeline /></section>
+            <section id="locatie"><Location /></section>
+            <section id="galerie"><InvitationForm /></section>
+            <section id="confirmare"><InvitationForm /></section>
         </>
         
     );

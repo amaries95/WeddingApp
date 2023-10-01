@@ -1,0 +1,16 @@
+li {
+    display: block;
+    flex: 0 1 auto;
+}
+
+li a {
+    text-decoration: none;
+    font-family: "Italianno", cursive;
+    font-size: 30px;
+    color: var(--header-color);
+}
+
+li:hover a {
+    transition-duration: 0.3s;
+    color: var(--hover-header-color);
+}

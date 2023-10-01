@@ -1,16 +1,19 @@
-import { ListGroup } from "react-bootstrap";
 import Option from "./Option/Option";
+import style from "./Options.module.css";
+import './../../../Styles/Colors.css';
 
 export default function Options (props) {
-    const HeaderOptions = ["home", "weddingtimeline", "location", "invitationform"];
+    const HeaderOptions = ["Itinerariu", "Locatie", "home", "Galerie", "Confirmare"];
 
     return (
-        <ListGroup>
-            {HeaderOptions.map( option => {
-                return (
-                    <Option text={option} key={Math.random()} />
-                )
-            })}
-        </ListGroup>
+        <div className={style["options-container"]}>
+            <ul>
+                {HeaderOptions.map( option => {
+                    return (
+                        <Option text={option} key={Math.random()} />
+                    )
+                })}
+            </ul>
+        </div>
     )
 }

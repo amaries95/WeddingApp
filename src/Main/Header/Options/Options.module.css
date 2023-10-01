@@ -1,0 +1,17 @@
+ul {
+    list-style-type: none;
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    width: 96%;
+    padding: 2px 0;
+    background-color: var(--base-background-color);
+}
+
+.options-container {
+    background-color: var(--base-background-color);
+    width: 100%;
+    padding: 1px 2%;
+    top: 0px;
+    position: fixed;
+}
