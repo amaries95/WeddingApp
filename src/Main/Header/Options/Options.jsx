@@ -3,7 +3,7 @@ import style from "./Options.module.css";
 import './../../../Styles/Colors.css';
 
 export default function Options (props) {
-    const HeaderOptions = ["Itinerariu", "Locatie", "home", "Galerie", "Confirmare"];
+    const HeaderOptions = ["Itinerariu", "home", "Confirmare"];
 
     return (
         <div className={style["options-container"]}>

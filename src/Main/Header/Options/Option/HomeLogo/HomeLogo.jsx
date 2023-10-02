@@ -1,4 +1,4 @@
-import HomeLogoImage from "./HomeLogoImage.svg";
+import HomeLogoImage from "./HomeLogoImage.png";
 import style from "./HomeLogo.module.css";
 
 export default function HomeLogo() {

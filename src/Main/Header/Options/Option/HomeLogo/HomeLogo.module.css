@@ -1,6 +1,6 @@
 .home-logo-container img{
-    width: 3%;
+    width: 125px;
     display: flex;
     align-items: center;
-    
+    font-size: 50px;
 }
