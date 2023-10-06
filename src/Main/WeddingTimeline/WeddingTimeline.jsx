@@ -4,7 +4,9 @@ export default function WeddingTimeline () {
     return (
         <>
             <div className={style['container']}>
-                WeddingTimeline
+                <div className={style['timeline-container']}>
+                    <span>Itinerariu</span>
+                </div>
             </div>
         </>
     );

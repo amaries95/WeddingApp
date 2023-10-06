@@ -1,4 +1,28 @@
 .time-block-container {
-    padding: 50px;
-    box-shadow: 3px 0px 15px grey;
+    min-width: 200px;
+    min-height: 200px;
+    box-shadow: 1px 0px 10px var(--shadow-color);
+    margin: 20px;
+    border-radius: 5px;
+    width: 90px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.time-block-container span {
+    font-family: 'Tangerine', cursive;
+    font-style: italic;
+    font-weight: 500;
+    color: var(--time-color);
+    font-size: 100px;
+    margin: 0;
+    padding: 0;
+}
+
+.time-block-container p {
+    font-family: 'Spectral', serif;
+    font-weight: 500;
+    font-size: 13px;
 }

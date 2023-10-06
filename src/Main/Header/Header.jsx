@@ -1,11 +1,19 @@
-import Options from "./Options/Options";
+import Option from "./Option/Option";
+import style from "./Header.module.css";
+import "./../../Styles/Colors.css";
 
-export default function Header() {
+export default function Header (props) {
+    const HeaderOptions = ["left-photo", "Itinerariu", "home", "Confirmare", "right-photo"];
+
     return (
-        <>
-            <div>
-                <Options></Options>
-            </div>
-        </>
-    );
+        <div className={style["options-container"]}>
+            <ul>
+                {HeaderOptions.map( option => {
+                    return (
+                        <Option text={option} key={Math.random()} />
+                    )
+                })}
+            </ul>
+        </div>
+    )
 }
