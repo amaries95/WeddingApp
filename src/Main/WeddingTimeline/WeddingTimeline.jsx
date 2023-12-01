@@ -10,6 +10,8 @@ import Description from './Description/Description';
 import SplitLine from './SplitLine/SplitLine';
 import LeftDecorativePhoto from './Photos/left-flower.png';
 import RightDecorativeFlower from './Photos/right-flower.png';
+import { useState } from 'react';
+import { useEffect } from 'react';
 
 export default function WeddingTimeline () {
     const weddingTimelineList = [
@@ -21,43 +23,88 @@ export default function WeddingTimeline () {
         { photo: WeddingCake, title: "Tortul", hour: "21:00", description: "Anul trecut, Premiul Nobel pentru Pace a fost acordat organizațiilor pentru drepturile omului Memorial din Rusia și Centrul pentru Libertăți Civile din Ucraina"},
     ];
 
+    const [isNormalScreen, setIsNormalScreen] = useState(true);
+
+    useEffect(() => {
+
+        function handleResize(){
+            if(window.innerWidth < 751)
+            {
+                setIsNormalScreen(false);
+            }
+            else{
+                setIsNormalScreen(true);
+            }
+        }
+
+        handleResize();
+        window.addEventListener('resize', handleResize);
+    }, []);
+
     return (
-        <div className={style['container']}>
-            <div className={style['decorative-left-container']}>
-                    <img src={LeftDecorativePhoto}></img>
-            </div>
-            <div className={style['left-container']}>
-                {weddingTimelineList.map((element, i) => {
-                    if(i % 2 === 0){
-                        return (<Photo src={element.photo} key={i} />);
-                    }
-                    return <Description 
-                                key={i}
-                                title={element.title}
-                                hour={element.hour}
-                                description={element.description} />
-                })}
-            </div>
-            <div className={style['mid-container']}>
-                {weddingTimelineList.map((element, i) => {
-                    return <SplitLine key={i}/>
-                })}
-            </div>
-            <div className={style['right-container']}>
-                {weddingTimelineList.map((element, i) => {
-                    if(i % 2 !== 0){
-                        return (<Photo src={element.photo} key={i} />);
-                    }
-                    return <Description 
-                                key={i}
-                                title={element.title}
-                                hour={element.hour}
-                                description={element.description} />
-                })}
-            </div>
-            <div className={style['decorative-right-container']}>
-                <img src={RightDecorativeFlower}></img>
-            </div>
-        </div>
+        <>
+            {isNormalScreen && 
+            <div className={style['container']}>
+                <div className={style['decorative-left-container']}>
+                        <img src={LeftDecorativePhoto}></img>
+                </div>
+                <div className={style['left-container']}>
+                    {weddingTimelineList.map((element, i) => {
+                        if(i % 2 === 0){
+                            return (<Photo src={element.photo} key={i} />);
+                        }
+                        return <Description 
+                                    key={i}
+                                    title={element.title}
+                                    hour={element.hour}
+                                    description={element.description} />
+                    })}
+                </div>
+                <div className={style['mid-container']}>
+                    {weddingTimelineList.map((element, i) => {
+                        return <SplitLine key={i}/>
+                    })}
+                </div>
+                <div className={style['right-container']}>
+                    {weddingTimelineList.map((element, i) => {
+                        if(i % 2 !== 0){
+                            return (<Photo src={element.photo} key={i} />);
+                        }
+                        return <Description 
+                                    key={i}
+                                    title={element.title}
+                                    hour={element.hour}
+                                    description={element.description} />
+                    })}
+                </div>
+                <div className={style['decorative-right-container']}>
+                    <img src={RightDecorativeFlower}></img>
+                </div>
+            </div>}
+
+            {!isNormalScreen && 
+            <div className={style['mobile-container']}>
+                {/* <div className={style['mid-container']}>
+                    {weddingTimelineList.map((element, i) => {
+                        return <SplitLine key={i}/>
+                    })}
+                </div> */}
+                
+                    {weddingTimelineList.map((element, i) => {
+                        return (
+                            <div className={style['mobile-element-container']}>
+                                <Description
+                                        key={i}
+                                        title={element.title}
+                                        hour={element.hour}
+                                        description={element.description} />
+                                <Photo src={element.photo} key={i} />
+                            </div>)
+                    })}
+                </div>
+            
+            }
+        </>
+        
     );
 }

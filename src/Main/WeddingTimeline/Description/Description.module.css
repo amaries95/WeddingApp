@@ -26,3 +26,10 @@
     font-size: 16px;
     font-style: italic;
 }
+
+@media (max-width: 750px) {
+    .description-container {
+        width: 80%;
+        height: auto;
+    }    
+}

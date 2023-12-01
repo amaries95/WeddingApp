@@ -9,7 +9,7 @@ export default function Main() {
         <>
             <Header></Header>
             <section id=""><Home /></section>
-            {/* <section id="itinerariu"><WeddingTimeline /></section> */}
+            <section id="itinerariu"><WeddingTimeline /></section>
             {/* <section id="confirmare"><InvitationForm /></section> */}
         </>
         

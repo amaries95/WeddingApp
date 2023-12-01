@@ -10,3 +10,10 @@
     width: 140px;
     max-height: 200px;
 }
+
+@media (max-width: 750px) {
+    .photo-container {
+        height: auto;
+        margin: 20px 0px;
+    }    
+}
