@@ -10,7 +10,7 @@ on:
       - master
 
 jobs:
-  - job: BuildPublish
+  - buildpublish: BuildPublish
     displayName: 'Build and Publish'
     steps:
       - script: npm install
