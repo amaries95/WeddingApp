@@ -14,8 +14,11 @@
 }
 
 .story-container p {
-    font-size: 30px;   
-    font-family: "Italianno", cursive;
+    font-size: 20px;   
+    font-family: 'Merinda', cursive;
+    font-style: italic;
+    color: var(--time-metric);
+    font-weight: 400;
     max-width: 60%;
 }
 
@@ -23,12 +26,49 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    flex-wrap: wrap;
     flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
 }
 
-.photo-container img{
-    width: 500px;
+.lovers-words-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+}
+
+.words-container {
+    font-family: 'Nunito', sans-serif;
+    color: var(--time-metric);
+    font-style: italic;
+    font-weight: 500;
+}
+
+.words-container p {
+    margin: 0;
+}
+
+.name-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.name-container p {
+    font-family: 'Italianno', cursive;
+    font-size: 40px;
+    color: var(--hover-header-color);
+}
+
+.photo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.photo-container img {
+    width: 600px;
 }
 
 .date-container {

@@ -1,9 +1,9 @@
-import style from './Location.module.css';
+import style from './Footer.module.css';
 
 export default function Location () {
     return (
     <div className={style['container']}>
-        Location
+        Footer
     </div>
     );
 } 

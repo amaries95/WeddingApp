@@ -1,0 +1,4 @@
+.container {
+    background-image: linear-gradient(var(--base-background-color), var(--form-background-color-darker));
+    padding-top: 4%;
+}

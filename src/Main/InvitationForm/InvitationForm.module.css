@@ -1,5 +1,108 @@
 .container {
-    padding-bottom: 500px;
-    background-color: antiquewhite;
-    padding-top: 4%;
+    /* background-color: var(--base-background-color); */
+    padding-top: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(var(--base-background-color), transparent), url('./background.JPEG');
+    background-size: cover;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    padding-bottom: 40px;
+}
+
+.form-container {
+    background-color: var(--base-background-color);
+    padding: 3% 5%;
+    margin: 3% 5%;
+    width: 300px;
+    /* box-shadow: 0 0 10px var(--time-color); */
+}
+
+.welcome-text p{
+    color: var(--hover-header-color);
+    font-size: 50px;
+    font-family: "Italianno", cursive;
+    margin: 0;
+    margin-bottom: 30px;
+}
+
+.input-style input{
+    margin-bottom: 20px;
+    border-radius: 15px;
+    border: 2px solid var(--form-background-color);
+    outline: 0;
+    padding: 7%;
+    background-color: var(--base-background-color);
+    width: 250px;
+    height: 10px;
+}
+
+.input-style input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+.input-style input:focus {
+    border-bottom: 2px solid var(--form-background-color);
+}
+
+.textarea-container textarea {
+    width: 250px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    border: 2px solid var(--form-background-color);
+    outline: 0;
+    padding: 7%;
+    background-color: var(--base-background-color);
+    resize: none;
+    height: 60px;
+    font-family: Arial;
+}
+
+.button-container {
+    margin-top: 50px;
+}
+
+.button-container button {
+    padding: 5%;
+    width: 100%;
+    border-radius: 15px;
+    border: 0;
+    background-color: var(--form-background-color);
+    color: white;
+}
+
+.button-container button:hover {
+    background-color: var(--form-background-color-darker);
+    cursor: pointer;
+    transition-duration: 0.1s;
+}
+
+.footer-container {
+    display: block;
+}
+
+.rights-container p{
+    color: var(--base-background-color);
+    font-weight: 400;
+    font-size: 17px;
+}
+
+.social-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+.social-element a {
+    text-decoration: none;
+}
+
+.social-element a svg {
+    color: var(--base-background-color);
+    width: 30px;
+    height: 30px;
 }

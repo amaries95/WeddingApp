@@ -1,6 +1,8 @@
 import style from './InvitationForm.module.css';
 import { useRef, useState } from 'react';
 import { Host, NewGuest, Https, Post } from '../../Shared/UrlConstants';
+import { IoCall } from 'react-icons/io5';
+import { BsFacebook, BsInstagram } from 'react-icons/bs';
 
 export default function InvitationForm () {
     var yesCheckbox = useRef(null);
@@ -86,40 +88,51 @@ export default function InvitationForm () {
 
     return (
         <div className={style['container']}>
-            <form onSubmit={onFormSubmit}>
-                <div>
-                    <label>Partikipi?</label>
+            <div className={style['form-container']}>
+                <div className={style['welcome-text']}>
+                    <p>Va asteptam cu drag!</p>
                 </div>
-                <div>
-                    <label>Nume</label>
-                    <input type='text' ref={nameRef}></input>
-                </div>
-                <label>Confirmi participarea?</label>
-                <div>
-                    <input type="checkbox" id="checkboxDA" onChange={onYesCheckboxSelected} ref={yesCheckbox}/>
-                    <label htmlFor="checkboxDA">Da</label>
-                </div>
-                <div>
-                    <input type="checkbox" id="checkboxNU" onChange={onNoCheckboxSelected} ref={noCheckbox}/>
-                    <label htmlFor="checkboxNU">Nu</label>
-                </div>
-                {isShownFormDetails && <div>
-                    <div>
-                        <label>Numar de persoane</label>
-                        <input type='number' ref={node => nbrPersonRef.current = node}></input>
+                <form onSubmit={onFormSubmit}>
+                    <div className={style['input-style']}>
+                        <input type='text' ref={nameRef} placeholder='Nume invitat'></input>
                     </div>
-                    <div>
-                        <label>numar Meniuri vegetariene</label>
-                        <input type='number' ref={node => veggieMenusRef.current = node }></input>
+                    <div className={style['input-style']}>
+                        <input type='number' ref={node => nbrPersonRef.current = node} placeholder='Numar persoane'></input>
                     </div>
-                    <div>
-                        <label>Other details</label>
-                        <input type='text' ref={node => otherDetailsRef.current = node}></input>
+                    <div className={style['input-style']}>
+                        <input type='number' ref={node => veggieMenusRef.current = node} placeholder='Meniuri vegetariene'></input>
                     </div>
-                </div>}
-                {validationMessage && <p>{validationMessage}</p>}
-                <button>Trimite</button>
-            </form>
+                    <div className={style['textarea-container']}>
+                        <textarea type='text' ref={node => otherDetailsRef.current = node} placeholder='Alte detalii'></textarea>
+                    </div>
+                    {validationMessage && <span>{validationMessage}</span>}
+                    <div className={style['button-container']}>
+                        <button>Participa</button>
+                    </div>
+                </form>
+            </div>
+            <div className={style['footer-container']}>
+                <div className={style['rights-container']}>
+                    <p>© 2023 Alexandrii's Wedding. Design By Alex Maries. All Rights Reserved.</p>
+                </div>
+                <div className={style['social-container']}>
+                    <div className={style['social-element']}>
+                        <a href='tel: +40751437972'>
+                            <IoCall></IoCall>
+                        </a>
+                    </div>
+                    <div className={style['social-element']}>
+                        <a href='tel: +40751437972'>
+                            <BsFacebook></BsFacebook>
+                        </a>
+                    </div>
+                    <div className={style['social-element']}>
+                        <a href='tel: +40751437972'>
+                            <BsInstagram></BsInstagram>
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
     );
 } 
