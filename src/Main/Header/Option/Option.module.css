@@ -16,3 +16,16 @@ li:hover a {
     transition-duration: 0.3s;
     color: var(--hover-header-color);
 }
+
+
+@media (max-width: 450px) {
+    li a { 
+        font-size: 25px;
+    }
+}
+
+@media (max-width: 350px) {
+    li a { 
+        font-size: 20px;
+    }
+}

@@ -4,3 +4,9 @@
     align-items: center;
     font-size: 50px;
 }
+
+@media (max-width: 450px) {
+    .home-logo-container img {
+        width: 90px;
+    }
+}

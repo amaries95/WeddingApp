@@ -20,6 +20,7 @@ export default function Header (props) {
 
         }
 
+        handlerRezize();
         window.addEventListener('resize', handlerRezize);
     }, []);
 
