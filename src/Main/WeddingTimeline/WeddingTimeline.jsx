@@ -51,10 +51,10 @@ export default function WeddingTimeline () {
                 <div className={style['left-container']}>
                     {weddingTimelineList.map((element, i) => {
                         if(i % 2 === 0){
-                            return (<Photo src={element.photo} key={i} />);
+                            return (<Photo src={element.photo} key={Math.random() * 100} />);
                         }
                         return <Description 
-                                    key={i}
+                                    key={Math.random() * 100}
                                     title={element.title}
                                     hour={element.hour}
                                     description={element.description} />
@@ -68,10 +68,10 @@ export default function WeddingTimeline () {
                 <div className={style['right-container']}>
                     {weddingTimelineList.map((element, i) => {
                         if(i % 2 !== 0){
-                            return (<Photo src={element.photo} key={i} />);
+                            return (<Photo src={element.photo} key={Math.random() * 100} />);
                         }
                         return <Description 
-                                    key={i}
+                                    key={Math.random() * 100}
                                     title={element.title}
                                     hour={element.hour}
                                     description={element.description} />
@@ -94,11 +94,11 @@ export default function WeddingTimeline () {
                         return (
                             <div className={style['mobile-element-container']}>
                                 <Description
-                                        key={i}
+                                        key={Math.random() * 100}
                                         title={element.title}
                                         hour={element.hour}
                                         description={element.description} />
-                                <Photo src={element.photo} key={i} />
+                                <Photo src={element.photo} key={Math.random() * 100} />
                             </div>)
                     })}
                 </div>
