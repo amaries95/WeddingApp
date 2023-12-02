@@ -112,9 +112,6 @@ export default function InvitationForm () {
                 </form>
             </div>
             <div className={style['footer-container']}>
-                <div className={style['rights-container']}>
-                    <p>© 2023 Alexandrii's Wedding. Design By Alex Maries. All Rights Reserved.</p>
-                </div>
                 <div className={style['social-container']}>
                     <div className={style['social-element']}>
                         <a href='tel: +40751437972'>
@@ -122,15 +119,18 @@ export default function InvitationForm () {
                         </a>
                     </div>
                     <div className={style['social-element']}>
-                        <a href='tel: +40751437972'>
+                        <a href='https://www.facebook.com/alexandru.maries28'>
                             <BsFacebook></BsFacebook>
                         </a>
                     </div>
                     <div className={style['social-element']}>
-                        <a href='tel: +40751437972'>
+                        <a href='https://www.instagram.com/alexandru.maries28/'>
                             <BsInstagram></BsInstagram>
                         </a>
                     </div>
+                </div>
+                <div className={style['rights-container']}>
+                    <p>© 2023 Alexandrii's Wedding. All Rights Reserved. Design with ❤ by Alex Maries.</p>
                 </div>
             </div>
         </div>
