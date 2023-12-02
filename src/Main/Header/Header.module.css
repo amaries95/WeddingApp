@@ -17,3 +17,9 @@ ul {
     position: fixed;
     height: 150px;
 }
+
+@media (max-width: 450px) {
+    .options-container {
+        height: auto;
+    }
+}
