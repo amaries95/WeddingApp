@@ -74,15 +74,17 @@
 
 @media (max-width: 450px) {
     .time-block-container {
-
+        min-width: 60px;
+        min-height: 60px;
+        margin: 10px;
     }
     
     .time-block-container span {
-
+        font-size: 40px;
     }
 
     .time-block-container p {
-        
+        font-size: 9px;
     }
 }
 

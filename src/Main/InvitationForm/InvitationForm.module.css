@@ -16,6 +16,37 @@
     overflow: hidden;
 }
 
+.validation-messsage {
+    inline-size:var(--form-elements-width);
+    overflow-wrap: break-word;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.validation-messsage p {
+    color: rgb(192, 70, 70);
+    font-style: italic;
+    overflow: visible;
+    margin: 0;
+    font-size: 15px;
+}
+
+.validation-success-messsage {
+    inline-size:var(--form-elements-width);
+    overflow-wrap: break-word;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.validation-success-messsage p {
+    color: rgb(15, 158, 34);
+    overflow: visible;
+    margin: 0;
+    font-size: 15px;
+}
+
 .form-container {
     background-color: var(--base-background-color);
     padding: 40px 50px;
@@ -24,6 +55,11 @@
     align-items: center;
     justify-content: center;
     width: 350px;
+    flex-wrap: wrap;
+}
+
+.form-container form {
+    width: var(--form-elements-width);
 }
 
 .welcome-text p{
@@ -91,6 +127,7 @@
 .button-container button {
     padding: 5%;
     border-radius: 15px;
+    height: 45px;
     border: 0;
     background-color: var(--form-background-color);
     color: white;
@@ -113,13 +150,13 @@
     align-items: center;
     flex-direction: column;
     flex-wrap: wrap;
-    margin: 0px 15px;
+    margin: 0px 30px;
 }
 
 .rights-container p{
     color: var(--base-background-color);
     font-weight: 400;
-    font-size: 17px;
+    font-size: 16px;
     margin: 0;
 }
 
@@ -142,9 +179,43 @@
     height: 30px;
 }
 
+.loading-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.loading-spinner {
+    border: 3px solid white;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border-right-color: transparent;
+    animation: rot 1s linear infinite;
+}
+
+@keyframes rot {
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
 @media (max-width: 450px) {
     .rights-container p {
         font-size: 15px;
+    }
+
+    .validation-messsage p {
+        font-size: 14px;
+    }
+
+    .validation-success-messsage p {
+        font-size: 14px;
+    }
+
+    .rights-container p {
+        font-size: 14px;
     }
 }
 

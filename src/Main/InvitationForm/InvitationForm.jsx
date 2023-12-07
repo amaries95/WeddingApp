@@ -5,8 +5,6 @@ import { IoCall } from 'react-icons/io5';
 import { BsFacebook, BsInstagram } from 'react-icons/bs';
 
 export default function InvitationForm () {
-    var yesCheckbox = useRef(null);
-    var noCheckbox = useRef(null);
     var nameRef = useRef(null);
     var nbrPersonRef = useRef(null);
     var veggieMenusRef = useRef(null);
@@ -14,6 +12,8 @@ export default function InvitationForm () {
 
     const [isShownFormDetails, setIsShownFormDetails] = useState(false);
     const [validationMessage, setValidationMessage] = useState("");
+    const [validationSuccessMessage, setValidationSuccessMessage] = useState("");
+    const [isLoading, setIsLoading] = useState(false);
 
     const onFormSubmit = (event) => {
         event.preventDefault();
@@ -21,57 +21,49 @@ export default function InvitationForm () {
     }
 
     const submitForm = async () => {
-        
+        setValidationSuccessMessage("");
+        setValidationMessage("");
+
         if(!(checkIfNotNullOrEmpty(nameRef)
-        && (isCheckBoxChecked(yesCheckbox)
-        || isCheckBoxChecked(noCheckbox))
         && checkIfNotNullOrEmpty(nbrPersonRef)
         && checkIfNotNullOrEmpty(veggieMenusRef)))
         {
             setValidationMessage("Va rugam sa completati toate campurile.");
             return;
         }
-    
-        var response = await fetch(Https + Host + NewGuest,
-        {
-            method: Post,
-            body: JSON.stringify({
-                name: nameRef.current.value,
-                numberOfGuests: nbrPersonRef.current.value,
-                isComing: yesCheckbox.current.checked === true ? true : false,
-                numberOfVeggiesMenus: veggieMenusRef.current.value,
-                otherDetails: otherDetailsRef.current.value
-            }),
-            headers: {
-            'Content-Type': 'application/json',
-            'Accept': '*/*',
-            'Host': Host,
-            }
-        });
 
-        if(await response.status === 200)
-        {
-            console.log("Successfully saved!");
-        }
-        else {
-            console.log("Something went wrong. please inform Alex Maries about the error.");
-            // afiseaza un thank you dragut
-            // clear all the fields
-        }
-    }
+            setIsLoading(true);
 
-    const onYesCheckboxSelected = (event) => {
-        const state = event.currentTarget.checked;
+            await fetch(Https + Host + NewGuest,
+                {
+                    method: Post,
+                    body: JSON.stringify({
+                    name: nameRef.current.value,
+                    numberOfGuests: nbrPersonRef.current.value,
+                    numberOfVeggiesMenus: veggieMenusRef.current.value,
+                    otherDetails: otherDetailsRef.current.value
+                }),
+                headers: {
+                'Content-Type': 'application/json',
+                'Accept': '*/*',
+                'Host': Host,
+                },
+            }, {mode:'cors'})
+            .then((response) => {
+                if(response.ok)
+                {
+                    setValidationSuccessMessage("Va Multumim! 😊");
+                }
+                else {
+                    setValidationMessage("Something went wrong");
+                }
 
-        noCheckbox.current.checked = !state;
-        setIsShownFormDetails(state);
-    }
-
-    const onNoCheckboxSelected = (event) => {
-        const state = event.currentTarget.checked;
-
-        yesCheckbox.current.checked = !state;
-        setIsShownFormDetails(!state);
+                setIsLoading(false);
+            })
+            .catch((error) => {
+                setValidationMessage("Something went wrong");
+                setIsLoading(false);
+            });
     }
 
     const checkIfNotNullOrEmpty = (field) => {
@@ -80,10 +72,6 @@ export default function InvitationForm () {
             var value = field.current.value;
             return !(value === null || value.toString() === "");
         }
-    }
-
-    const isCheckBoxChecked = (field) => {
-        return field.current.checked;
     }
 
     return (
@@ -105,9 +93,27 @@ export default function InvitationForm () {
                     <div className={style['textarea-container']}>
                         <textarea type='text' ref={node => otherDetailsRef.current = node} placeholder='Alte detalii'></textarea>
                     </div>
-                    {validationMessage && <span>{validationMessage}</span>}
+                    <div className={style['validation-messsage']}>
+                        {validationMessage && 
+                        <p>{validationMessage}</p>
+                        }
+                    </div>
+                    <div className={style['validation-success-messsage']}>
+                        {validationSuccessMessage && 
+                        <p>{validationSuccessMessage}</p>
+                        }
+                    </div>
                     <div className={style['button-container']}>
-                        <button>Participa</button>
+                        <button>
+                            {!isLoading && 'Participa'}
+                            {isLoading && 
+                                <div className={style['loading-container']}>
+                                    <div className={style['loading-spinner']}>
+                                    </div>
+                                </div>
+                            }
+                        </button>
+
                     </div>
                 </form>
             </div>
@@ -130,7 +136,7 @@ export default function InvitationForm () {
                     </div>
                 </div>
                 <div className={style['rights-container']}>
-                    <p>© 2023 Alexandrii's Wedding. All Rights Reserved. Design with ❤ by Alex Maries.</p>
+                    <p>© 2023 Alexandrii's Wedding. All Rights Reserved. Made with ❤ by Alex Maries.</p>
                 </div>
             </div>
         </div>
