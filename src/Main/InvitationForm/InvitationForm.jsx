@@ -88,7 +88,7 @@ export default function InvitationForm () {
                         <input type='number' ref={node => nbrPersonRef.current = node} placeholder='Numar persoane'></input>
                     </div>
                     <div className={style['input-style']}>
-                        <input type='number' ref={node => veggieMenusRef.current = node} placeholder='Meniuri vegetariene'></input>
+                        <input type='text' ref={node => veggieMenusRef.current = node} placeholder='Meniu dorit (ex: 1x normal, 2x vegan)'></input>
                     </div>
                     <div className={style['textarea-container']}>
                         <textarea type='text' ref={node => otherDetailsRef.current = node} placeholder='Alte detalii'></textarea>

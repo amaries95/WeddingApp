@@ -7,21 +7,13 @@ export default function Home () {
     return (
         <>
             <div className={style['home-container']}>
-                {/* <div className={style['story-container']}>
-                    <p>
-                        &nbsp;&nbsp;&nbsp;&nbsp;Dupa 5 ani de relatie in care am invatat si am evoluat impreuna,
-                        am decis sa facem urmatorul pas catre o canicie la fel de frumoasa.
-                        Prin urmare, am vrea sa va invitam sa luati parte la acest eveniment
-                        foarte important pentru noi.
-                    </p>
-                </div> */}
                 <div className={style['lovers-container']}>
                     <div className={style['lovers-words-container']}>
                         <div className={style['name-container']}>
                             <p>Alexandra</p>
                         </div>
                         <div className={style['words-container']}>
-                            <p>Anul trecut, Premiul Nobel pentru Pace a fost acordat organizațiilor pentru drepturile omului Memorial din Rusia și Centrul pentru Libertăți Civile din Ucraina, precum și activistului bielorus Ales Bialiațki, pentru munca lor de apărare a drepturilor fundamentale.</p>
+                            <p>"Imi place sa cred ca tot ceea ce nu sunt eu, esti tu si invers. Promit sa te iubesc si sa fiu alaturi de tine si in urmatorii 100 de ani din viata noastra!"</p>
                         </div>
                         
                     </div>
