@@ -48,7 +48,7 @@ export default function InvitationForm () {
                 'Accept': '*/*',
                 'Host': Host,
                 },
-            }, {mode:'cors'})
+            })
             .then((response) => {
                 if(response.ok)
                 {
