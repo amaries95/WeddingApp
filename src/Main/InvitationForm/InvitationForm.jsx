@@ -40,7 +40,7 @@ export default function InvitationForm () {
                     body: JSON.stringify({
                     name: nameRef.current.value,
                     numberOfGuests: nbrPersonRef.current.value,
-                    numberOfVeggiesMenus: veggieMenusRef.current.value,
+                    typesOfMenu: veggieMenusRef.current.value,
                     otherDetails: otherDetailsRef.current.value
                 }),
                 headers: {
