@@ -14,7 +14,7 @@ function App() {
         <Col>
           <Routes>
             <Route path="/" element={<Main/>} />
-            <Route path="/sda/login" element={<Login /> } />
+            <Route path="/login" element={<Login /> } />
             <Route path="/admin" element={<Admin /> } />
           </Routes>
         </Col>
