@@ -2,8 +2,33 @@ import style from './Home.module.css';
 import HomeLoversPhoto from './HomeLoversPhoto.png';
 import { FiExternalLink } from 'react-icons/fi';
 import TimeLapse from './TimeLapse/TimeLapse';
+import { useEffect } from 'react';
+import { Https, Host, Post, IncreaseViews } from "../../Shared/UrlConstants";
 
 export default function Home () {
+    useEffect(() => {
+        increaseViews();
+    }, [])
+
+    function increaseViews () {
+        fetch(Https + Host + IncreaseViews, {
+            method: Post,
+            headers: {
+              "Content-Type": "application/json",
+              Accept: "*/*",
+              Host: Host
+            },
+          })
+            .then((response) => {
+              if (!response.ok) {
+                console.log("Views not successfully incremented!");
+              }
+              else {
+                console.log("Views incremented!");
+              }
+        })
+    }
+
     return (
         <>
             <div className={style['home-container']}>
