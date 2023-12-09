@@ -18,6 +18,12 @@ ul {
     height: 150px;
 }
 
+@media (max-width: 799px) {
+    .options-container ul {
+        justify-content: space-around;
+    }
+}
+
 @media (max-width: 450px) {
     .options-container {
         height: auto;

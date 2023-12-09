@@ -86,6 +86,7 @@
     background-color: var(--base-background-color);
     height: 10px;
     width: 100%;
+    font-family: Arial;
 }
 
 .input-style input[type=number]::-webkit-inner-spin-button {

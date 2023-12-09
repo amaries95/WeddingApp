@@ -1,15 +1,13 @@
 import { DataGrid } from "@mui/x-data-grid";
 import { useEffect, useState } from "react";
 import { Https, Host, AllGuests, Get, Views } from "../../Shared/UrlConstants";
-import style from "./AdminView.module.css";
 
 export default function AdminView(props) {
   const attendeesColumns = [
     { field: "id", headerName: "Id", width: 80 },
     { field: "name", headerName: "Nume", width: 400 },
     { field: "numberOfGuests", headerName: "# Invitati", width: 200 },
-    { field: "isComing", headerName: "Participa", width: 200 },
-    { field: "numberOfVeggiesMenus", headerName: "# Veggie Menus", width: 200 },
+    { field: "typesOfMenu", headerName: "Types of Menu", width: 200 },
     { field: "otherDetails", headerName: "Observatii", width: 300 },
   ];
 
@@ -18,22 +16,6 @@ export default function AdminView(props) {
       field: "id",
       headerName: "Id",
       width: 80,
-      filterable: false,
-      sortable: false,
-      disableColumnMenu: true,
-    },
-    {
-      field: "veggieMenus",
-      headerName: "Meniuri Veggie",
-      width: 200,
-      filterable: false,
-      sortable: false,
-      disableColumnMenu: true,
-    },
-    {
-      field: "normalMenus",
-      headerName: "Meniuri Carne",
-      width: 200,
       filterable: false,
       sortable: false,
       disableColumnMenu: true,
@@ -105,8 +87,6 @@ export default function AdminView(props) {
             setStatisticsRows([
               {
                 id: 1,
-                veggieMenus: statistics.veggieMenus,
-                normalMenus: statistics.normalMenus,
                 numberOfAttendees: statistics.numberOfAttendees,
                 numberOfViews: response.numberOfViews,
               },
@@ -125,14 +105,8 @@ export default function AdminView(props) {
     };
 
     atendees.forEach((element) => {
-      if (element.isComing) {
         statistics.numberOfAttendees += element.numberOfGuests;
-        statistics.veggieMenus += element.numberOfVeggiesMenus;
-      }
     });
-
-    statistics.normalMenus =
-      statistics.numberOfAttendees - statistics.veggieMenus;
 
     return statistics;
   };
