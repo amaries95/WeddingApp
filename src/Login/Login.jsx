@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { Host, Https, Post, UserLogin} from './../Shared/UrlConstants';
 import React from 'react';
 import { decodeToken } from 'react-jwt';
+import style from './Login.module.css';
 
 export default function Login () {
     const usernameInputRef = useRef();
@@ -58,20 +59,20 @@ export default function Login () {
     }
 
     return (
-        <>
-            <h2>Login</h2>
-            <form onSubmit={submitHandler}>
-                <div>
-                    <label>Username</label>
-                    <input type='text' ref={usernameInputRef}></input>
-                </div>
-                <div>
-                    <label>Password</label>
-                    <input type='password' ref={passwordInputRef}></input>
-                </div>
-                <button>Login</button>
-                {responseMessage && <label>{responseMessage}</label>}
-            </form>
-        </>
+        <div className={style['container']}>
+            <div className={style['login-container']}>
+                <h2>Login</h2>
+                <form onSubmit={submitHandler}>
+                    <div>
+                        <input type='text' ref={usernameInputRef} placeholder='username'></input>
+                    </div>
+                    <div>
+                        <input type='password' ref={passwordInputRef} placeholder='password'></input>
+                    </div>
+                    <button>Login</button>
+                    {responseMessage && <label>{responseMessage}</label>}
+                </form>
+            </div>
+        </div>
     );
 } 

@@ -22,7 +22,7 @@ export default function AdminView(props) {
     },
     {
       field: "numberOfAttendees",
-      headerName: "Total Invitati",
+      headerName: "Total Invitati care vin",
       width: 200,
       filterable: false,
       sortable: false,

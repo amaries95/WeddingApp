@@ -8,7 +8,7 @@ export default function InvitationForm () {
     var nameRef = useRef(null);
     var nbrPersonRef = useRef(null);
     var veggieMenusRef = useRef(null);
-    var otherDetailsRef = useState(null);
+    var otherDetailsRef = useRef(null);
 
     const [isShownFormDetails, setIsShownFormDetails] = useState(false);
     const [validationMessage, setValidationMessage] = useState("");
@@ -53,6 +53,7 @@ export default function InvitationForm () {
                 if(response.ok)
                 {
                     setValidationSuccessMessage("Va Multumim! 😊");
+                    clearTheForm();
                 }
                 else {
                     setValidationMessage("Something went wrong");
@@ -72,6 +73,13 @@ export default function InvitationForm () {
             var value = field.current.value;
             return !(value === null || value.toString() === "");
         }
+    }
+    
+    function clearTheForm() {
+        nameRef.current.value = null;
+        nbrPersonRef.current.value = null;
+        veggieMenusRef.current.value = null;
+        otherDetailsRef.current.value = null;
     }
 
     return (
