@@ -8,7 +8,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-image: linear-gradient(var(--base-background-color), transparent), url('./background.JPEG'), linear-gradient(var(--base-background-color), white);
+    background-image: linear-gradient(var(--base-background-color), white);
     background-size: cover;
     background-position: center bottom;
     background-repeat: no-repeat;
@@ -56,6 +56,7 @@
     justify-content: center;
     width: 350px;
     flex-wrap: wrap;
+    box-shadow: 0px 5px 25px 0px rgb(0 0 0 / 20%);
 }
 
 .form-container form {
@@ -112,13 +113,13 @@
     padding: 7%;
     background-color: var(--base-background-color);
     resize: none;
-    height: 60px;
+    height: 50px;
     font-family: Arial;
     width: 100%;
 }
 
 .button-container {
-    margin-top: 30px;
+    margin-top: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -143,6 +144,7 @@
 
 .footer-container {
     display: block;
+    margin-top: 30px;
 }
 
 .rights-container {
@@ -155,8 +157,8 @@
 }
 
 .rights-container p{
-    color: var(--base-background-color);
-    font-weight: 400;
+    color: var(--header-color);
+    font-weight: 500;
     font-size: 16px;
     margin: 0;
 }
@@ -175,7 +177,7 @@
 }
 
 .social-element a svg {
-    color: var(--base-background-color);
+    color: var(--hover-header-color);
     width: 30px;
     height: 30px;
 }
