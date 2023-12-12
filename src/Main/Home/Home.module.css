@@ -42,8 +42,10 @@
 }
 
 .words-container {
+    margin: 0;
+    font-size: 16px;
+    display: inline;
     font-family: 'Nunito', sans-serif;
-    color: var(--time-metric);
     font-style: italic;
     font-weight: 500;
 }
@@ -51,6 +53,16 @@
 .words-container p {
     margin: 0;
     font-size: 16px;
+    display: inline;
+    font-family: 'Nunito', sans-serif;
+    font-style: italic;
+    font-weight: 500;
+    color: var(--time-metric);
+}
+
+.words-container span {
+    color: var(--hover-header-color);
+    margin: 0px 2px;
 }
 
 .name-container {

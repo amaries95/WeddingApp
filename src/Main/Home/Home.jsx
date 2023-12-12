@@ -35,10 +35,10 @@ export default function Home () {
                 <div className={style['lovers-container']}>
                     <div className={style['lovers-words-container']}>
                         <div className={style['name-container']}>
-                            <p>Alexandra</p>
+                            <p>Ale</p>
                         </div>
                         <div className={style['words-container']}>
-                            <p>"Imi place sa cred ca tot ceea ce nu sunt eu, esti tu si invers. Promit sa te iubesc si sa fiu alaturi de tine si in urmatorii 100 de ani din viata noastra!"</p>
+                            <span>"</span><p>Imi place sa cred ca tot ceea ce nu sunt eu, esti tu si invers. Promit sa te iubesc si sa fiu alaturi de tine si in urmatorii 100 de ani din viata noastra!</p><span>"</span>
                         </div>
                         
                     </div>
@@ -52,7 +52,7 @@ export default function Home () {
                             <p>Alex</p>
                         </div>
                         <div className={style['words-container']}>
-                            <p>Anul trecut, Premiul Nobel pentru Pace a fost acordat organizațiilor pentru drepturile omului Memorial din Rusia și Centrul pentru Libertăți Civile din Ucraina, precum și activistului bielorus Ales Bialiațki, pentru munca lor de apărare a drepturilor fundamentale.</p>
+                            <span>"</span><p>Imi place sa cred ca tot ceea ce nu sunt eu, esti tu si invers. Promit sa te iubesc si sa fiu alaturi de tine si in urmatorii 100 de ani din viata noastra!</p><span>"</span>
                         </div>
                     </div>
                 </div>
