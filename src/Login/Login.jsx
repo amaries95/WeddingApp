@@ -11,6 +11,7 @@ export default function Login () {
     const navigate = useNavigate();
 
     var [responseMessage, setResponseMessage] = useState(null);
+    var [isLoading, setIsLoading] = useState(false);
 
     const submitHandler = async (event) => {
         event.preventDefault();
@@ -23,6 +24,7 @@ export default function Login () {
             return;
         }
 
+        setIsLoading(true);
         var response = await fetch(Https + Host + UserLogin,
         {
             method: Post,
@@ -41,6 +43,7 @@ export default function Login () {
 
         if(await response.status === 200)
         {
+            setIsLoading(false);
             if(responseJson.data != null)
             {
                 localStorage.setItem('token', responseJson.data);
@@ -54,6 +57,7 @@ export default function Login () {
             }
         }
         else {
+            setIsLoading(false);
             setResponseMessage(responseJson.message);
         }
     }
@@ -69,7 +73,15 @@ export default function Login () {
                     <div>
                         <input type='password' ref={passwordInputRef} placeholder='password'></input>
                     </div>
-                    <button>Login</button>
+                    <button>
+                    {!isLoading && 'Login'}
+                        {isLoading && 
+                            <div className={style['loading-container']}>
+                                <div className={style['loading-spinner']}>
+                                </div>
+                            </div>
+                        }
+                    </button>
                     {responseMessage && <label>{responseMessage}</label>}
                 </form>
             </div>

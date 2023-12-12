@@ -44,3 +44,25 @@
     background-color: var(--hover-header-color);
     cursor: pointer;
 }
+
+.loading-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.loading-spinner {
+    border: 3px solid white;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border-right-color: transparent;
+    animation: rot 1s linear infinite;
+}
+
+@keyframes rot {
+    100%{
+        transform: rotate(360deg);
+    }
+}
