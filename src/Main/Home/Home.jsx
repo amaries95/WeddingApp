@@ -1,5 +1,5 @@
 import style from './Home.module.css';
-import HomeLoversPhoto from './HomeLoversPhoto.png';
+import HomeLoversPhoto from './HomeLoversPhoto.jpg';
 import { FiExternalLink } from 'react-icons/fi';
 import TimeLapse from './TimeLapse/TimeLapse';
 import { useEffect } from 'react';
