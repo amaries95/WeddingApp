@@ -16,13 +16,13 @@ import { useEffect } from 'react';
 
 export default function WeddingTimeline () {
     const weddingTimelineList = [
-        { photo: LegalCeremony, title: "Cununia Civila",hour: "12:00", description: "Va invitam sa fiti alaturi de noi atunci cand spunem cel mai important DA din viata noastra. Cununia civila va avea loc langa lacul de vis-a-vis de biserica. Avand in vedere ca vom avea toate florile din lume la petrecere, va rugam sa nu aduceti nimic. Daca chiar nu se poate altfel, o sticla de vin."},
-        { photo: SpiritualCeremony, title: "Cununia Religioasa", hour: "12:15", description: "Apoi, usor ne vom indrepta spre biserica. Aici ne vom uni si in fata lui Dumnezeu. Va rugam sa va asezati si sa va deschideti inimile pentru noi."},
-        { photo: PhotoSession, title: "Sesiune Foto", hour: "13:30", description: "Avand in vedere ca vrem sa pastram amintirea acestei zile toata viata, va invitam si la sedinta foto de dupa cununia religioasa. Va rugam sa aveti rabdare si sa participati la toate propunerile fotografiilor."},
-        { photo: Welcome, title: "Receptie Sala Regina Maria", hour: "14:30", description: "REFORMULARE - Va invitam sa va luati papucii cei buni, pentru ca ne-ar placea sa va vedem cat mai mult pe ringul de dans."},
-        { photo: FirstDance, title: "Dansul Mirilor", hour: "15:30", description: "Bineinteles ca vor fi multe emotii, insa cu sustinerea voastra, speram ca primul nostru dans in calitate de sot-sotie sa fie memorabil. De preferabil, fara sa ne impiedicam."},
-        { photo: WeddingCake, title: "Tortul", hour: "21:00", description: "Bucurati-va alaturi de noi de prajituri, cocktail-uri si de toate surprizele zilei."},
-        { photo: TheEnd, title: "Sfarsitul Petrecerii", hour: "23:30", description: "Bucurati-va alaturi de noi de prajituri, cocktail-uri si de toate surprizele zilei."}
+        { photo: LegalCeremony, title: "Cununia Civilă",hour: "12:00", description: "Vă invităm să fiți alături de noi atunci când spunem cel mai important DA din viața noastră. Cununia civilă va avea loc lângă lacul de vis-a-vis de biserică. Având în vedere că vom avea toate florile din lume la petrecere, vă rugam să nu aduceți nimic. Dacă chiar nu se poate altfel, o sticlă de vin e suficientă."},
+        { photo: SpiritualCeremony, title: "Cununia Religioasă", hour: "12:15", description: "Apoi, ușor ne vom îndrepta spre biserică. Aici ne vom uni și în fața lui Dumnezeu. Vă rugam să vă așezați și să vă deschideți inimile pentru noi."},
+        { photo: PhotoSession, title: "Sesiune Foto", hour: "13:30", description: "Având în vedere că vrem să păstrăm amintirea acestei zile toată viața, vă invităm și la ședința foto de după cununia religioasă. Vă rugăm să aveți răbdare și să participați la toate propunerile fotografiilor."},
+        { photo: Welcome, title: "Recepție Sală Regina Maria", hour: "14:30", description: "Va invităm să savurați toate preparatele zilei și să vă luați papuci de schimb, pentru că ne-ar plăcea să vă vedem cât mai mult pe ringul de dans."},
+        { photo: FirstDance, title: "Dansul Mirilor", hour: "15:30", description: "Bineînteles că vor fi multe emoții, însă cu susținerea voastră, sperăm că primul nostru dans în calitate de soț-soție să fie memorabil. De preferat, fără să ne împiedicăm."},
+        { photo: WeddingCake, title: "Tortul", hour: "21:00", description: "Bucurați-vă alături de noi de prăjituri, cocktail-uri și de toate surprizele zilei."},
+        { photo: TheEnd, title: "Sfarșitul Petrecerii", hour: "23:30", description: "Tot ce frumos trebuie să aibă și un sfârșit însă suntem siguri că o să ne revedem curând la următoarea petrecere. Vă mulțumim!"}
     ];
 
     const [isNormalScreen, setIsNormalScreen] = useState(true);

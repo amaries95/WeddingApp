@@ -93,13 +93,13 @@ export default function InvitationForm () {
                         <input type='text' ref={nameRef} placeholder='Nume invitat'></input>
                     </div>
                     <div className={style['input-style']}>
-                        <input type='number' ref={node => nbrPersonRef.current = node} placeholder='Numar persoane'></input>
+                        <input type='number' ref={node => nbrPersonRef.current = node} placeholder='Număr persoane'></input>
                     </div>
                     <div className={style['input-style']}>
-                        <input type='text' ref={node => veggieMenusRef.current = node} placeholder='Meniu dorit (ex: 1x normal, 2x vegan)'></input>
+                        <input type='text' ref={node => veggieMenusRef.current = node} placeholder='Meniul dorit (ex: 1x normal, 2x vegan)'></input>
                     </div>
                     <div className={style['textarea-container']}>
-                        <textarea type='text' ref={node => otherDetailsRef.current = node} placeholder='Alte detalii'></textarea>
+                        <textarea type='text' ref={node => otherDetailsRef.current = node} placeholder='Alte detalii (ex: ajutor cu cazarea)'></textarea>
                     </div>
                     <div className={style['validation-messsage']}>
                         {validationMessage && 
@@ -113,7 +113,7 @@ export default function InvitationForm () {
                     </div>
                     <div className={style['button-container']}>
                         <button>
-                            {!isLoading && 'Participa'}
+                            {!isLoading && 'Participă'}
                             {isLoading && 
                                 <div className={style['loading-container']}>
                                     <div className={style['loading-spinner']}>
@@ -144,7 +144,7 @@ export default function InvitationForm () {
                     </div>
                 </div>
                 <div className={style['rights-container']}>
-                    <p>© 2023 Alexandrii's Wedding. All Rights Reserved. Made with ❤ by Alex Maries.</p>
+                    <p>© 2023 Alexandrii's Wedding. All Rights Reserved. Made with ❤ by Alex Mărieș.</p>
                 </div>
             </div>
         </div>

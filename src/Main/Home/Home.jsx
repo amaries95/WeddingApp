@@ -38,7 +38,7 @@ export default function Home () {
                             <p>Ale</p>
                         </div>
                         <div className={style['words-container']}>
-                            <span>"</span><p>Imi place sa cred ca tot ceea ce nu sunt eu, esti tu si invers. Promit sa te iubesc si sa fiu alaturi de tine si in urmatorii 100 de ani din viata noastra!</p><span>"</span>
+                            <span>"</span><p>Îmi place să cred că tot ceea ce nu sunt eu, ești tu și invers. Promit să te iubesc și să fiu alături de tine și în următorii 100 de ani din viața noastră!</p><span>"</span>
                         </div>
                         
                     </div>
