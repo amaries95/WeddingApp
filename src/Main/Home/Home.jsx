@@ -52,7 +52,7 @@ export default function Home () {
                             <p>Alex</p>
                         </div>
                         <div className={style['words-container']}>
-                            <span>"</span><p>În acești 5 ani de relație am învățat unul de la celălalt și am evoluat împreuna. Din fericire, suntem abia la începutul călătoriei. Promit că voi fi partenerul tău pe toată durata acesteia, să te iubesc, să te respect și să te susțin în toate visurile tale.</p><span>"</span>
+                            <span>"</span><p>În acești 5 ani de relație am învățat unul de la celălalt și am evoluat împreună. Din fericire, suntem abia la începutul călătoriei. Promit că voi fi partenerul tău pe toată durata acesteia, să te iubesc, să te respect și să te susțin în toate visurile tale.</p><span>"</span>
                         </div>
                     </div>
                 </div>
