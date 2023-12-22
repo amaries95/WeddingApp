@@ -28,7 +28,7 @@ export default function InvitationForm () {
         && checkIfNotNullOrEmpty(nbrPersonRef)
         && checkIfNotNullOrEmpty(veggieMenusRef)))
         {
-            setValidationMessage("Va rugam sa completati toate campurile.");
+            setValidationMessage("Vă rugăm să completați toate câmpurile.");
             return;
         }
 
@@ -52,17 +52,17 @@ export default function InvitationForm () {
             .then((response) => {
                 if(response.ok)
                 {
-                    setValidationSuccessMessage("Va Multumim! 😊");
+                    setValidationSuccessMessage("Vă Mulțumim! 😊");
                     clearTheForm();
                 }
                 else {
-                    setValidationMessage("Something went wrong");
+                    setValidationMessage("Ceva nu funcționează. Luati legătura cu Alex Mărieș");
                 }
 
                 setIsLoading(false);
             })
             .catch((error) => {
-                setValidationMessage("Something went wrong");
+                setValidationMessage("Ceva nu funcționează. Luati legătura cu Alex Mărieș");
                 setIsLoading(false);
             });
     }
@@ -86,7 +86,7 @@ export default function InvitationForm () {
         <div className={style['container']}>
             <div className={style['form-container']}>
                 <div className={style['welcome-text']}>
-                    <p>Va asteptam cu drag!</p>
+                    <p>Vă așteptăm cu drag!</p>
                 </div>
                 <form onSubmit={onFormSubmit}>
                     <div className={style['input-style']}>

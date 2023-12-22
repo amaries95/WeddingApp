@@ -43,7 +43,7 @@
 
 .words-container {
     margin: 0;
-    font-size: 23px;
+    font-size: 24px;
     display: inline;
     font-family: 'Caveat', cursive;
     font-weight: 500;
@@ -162,7 +162,7 @@
     }
 
     .words-container p {
-        font-size: 20px;
+        font-size: 22px;
     }
 
     .name-container p {
@@ -194,7 +194,7 @@
     }
 
     .words-container p {
-        font-size: 18px;
+        font-size: 20px;
     }
 
     .lovers-words-container {

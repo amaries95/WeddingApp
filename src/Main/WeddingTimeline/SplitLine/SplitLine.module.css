@@ -1,5 +1,5 @@
 .split-line-container {
-    height: 300px;
+    height: 330px;
     width: 50px;
     display: flex;
     flex-direction: column;
@@ -15,6 +15,6 @@
 
 .line {
     border: 1px solid var(--circle-color);
-    height: 300px;
+    height: 330px;
     overflow: hidden;
 }

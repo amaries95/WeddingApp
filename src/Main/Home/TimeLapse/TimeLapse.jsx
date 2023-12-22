@@ -37,11 +37,11 @@ export default function TimeLapse () {
 
     return (
         <div className={style['time-lapse-container']}>
-            <TimeBlock Value={months} Description='MONTHS'></TimeBlock>
-            <TimeBlock Value={days} Description='DAYS'></TimeBlock>
-            <TimeBlock Value={hours} Description='HOURS'></TimeBlock>
-            <TimeBlock Value={minutes} Description='MINUTES'></TimeBlock>
-            <TimeBlock Value={seconds} Description='SECONDS'></TimeBlock>
+            <TimeBlock Value={months} Description='LUNI'></TimeBlock>
+            <TimeBlock Value={days} Description='ZILE'></TimeBlock>
+            <TimeBlock Value={hours} Description='ORE'></TimeBlock>
+            <TimeBlock Value={minutes} Description='MINUTE'></TimeBlock>
+            <TimeBlock Value={seconds} Description='SECUNDE'></TimeBlock>
         </div>
     );
 }
