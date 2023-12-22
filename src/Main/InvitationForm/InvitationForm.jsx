@@ -90,16 +90,16 @@ export default function InvitationForm () {
                 </div>
                 <form onSubmit={onFormSubmit}>
                     <div className={style['input-style']}>
-                        <input type='text' ref={nameRef} placeholder='Nume invitat'></input>
+                        <input type='text' ref={nameRef} placeholder='Nume invitați'></input>
                     </div>
                     <div className={style['input-style']}>
                         <input type='number' ref={node => nbrPersonRef.current = node} placeholder='Număr persoane'></input>
                     </div>
                     <div className={style['input-style']}>
-                        <input type='text' ref={node => veggieMenusRef.current = node} placeholder='Meniul dorit (ex: 1x normal, 2x vegan)'></input>
+                        <input type='text' ref={node => veggieMenusRef.current = node} placeholder='Meniu dorit (ex: 1x normal, 2x vegan)'></input>
                     </div>
                     <div className={style['textarea-container']}>
-                        <textarea type='text' ref={node => otherDetailsRef.current = node} placeholder='Alte detalii (ex: ajutor cu cazarea)'></textarea>
+                        <textarea type='text' ref={node => otherDetailsRef.current = node} placeholder='Alte detalii (ex: ajutor cu cazarea, alergeni, meniu special - fara porc etc.)'></textarea>
                     </div>
                     <div className={style['validation-messsage']}>
                         {validationMessage && 

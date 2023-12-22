@@ -84,6 +84,7 @@
     border: 2px solid var(--form-background-color);
     outline: 0;
     padding: 7%;
+    padding-right: 0%;
     background-color: var(--base-background-color);
     height: 10px;
     width: 100%;
