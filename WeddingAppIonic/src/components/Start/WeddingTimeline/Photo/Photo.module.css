@@ -1,0 +1,43 @@
+.photo-container {
+    width: 330px;
+    height: 330px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.photo-container img {
+    width: 140px;
+    max-height: 200px;
+}
+
+@media (max-width: 750px) {
+    .photo-container {
+        height: auto;
+        width: auto;
+        margin: 20px 0px;
+    }    
+}
+
+@media (max-width: 600px) {
+    .photo-container img {
+        width: 130px;
+        height: auto;
+
+    }
+}
+
+@media (max-width: 450px) {
+   .photo-container img {
+        width: 120px;
+        height: auto;
+
+    }
+}
+
+@media (max-width: 350px) {
+    .photo-container img {
+        width: 100px;
+        height: auto;
+    }
+}
