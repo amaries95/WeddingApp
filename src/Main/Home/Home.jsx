@@ -35,10 +35,15 @@ export default function Home () {
                 <div className={style['lovers-container']}>
                     <div className={style['lovers-words-container']}>
                         <div className={style['name-container']}>
-                            <p>Ale</p>
+                            <p>Tery</p>
                         </div>
                         <div className={style['words-container']}>
-                            <span>"</span><p>Îmi place să cred că tot ceea ce nu sunt eu, ești tu și invers. Promit să te iubesc și să fiu alături de tine și în următorii 100 de ani din viața noastră!</p><span>"</span>
+                            <span>"</span>
+                            <p>
+                            Looks like we’ve made it,<br/>
+                            Look how far we’ve come my baby.<br/>
+                            Cand suntem impreuna, nimic nu poate sta in calea noastra. Nu mi-am imaginat niciodata ca cineva ma va face atat de fericita. Esti special, ma completezi si dai sens vietii mele. 
+</p><span>"</span>
                         </div>
                         
                     </div>
@@ -49,26 +54,26 @@ export default function Home () {
 
                     <div className={style['lovers-words-container']}>
                         <div className={style['name-container']}>
-                            <p>Alex</p>
+                            <p>Mitza</p>
                         </div>
                         <div className={style['words-container']}>
-                            <span>"</span><p>În acești 5 ani de relație am învățat unul de la celălalt și am evoluat împreună. Din fericire, suntem abia la începutul călătoriei. Promit că voi fi partenerul tău pe toată durata acesteia, să te iubesc, să te respect și să te susțin în toate visurile tale.</p><span>"</span>
+                            <span>"</span><p>Love is a long road. Din motivul acesta mi-am ales cel mai bun copilot. Stim ca doar impreuna putem urmari ruta corecta, vom putea trece peste orice obstacol de pe traseu si vom ajunge la destinatie, impreuna. Abia astept sa vad ce aventuri ne asteapta si dupa acest eveniment din vietile noastre.</p><span>"</span>
                         </div>
                     </div>
                 </div>
                 <div className={style['date-container']}>
                     <div className={style['date']}>
-                        <p>8 Iunie 2024</p>
+                        <p>24 Mai 2025</p>
                     </div>
                     <div className={style['location']}>
-                        <a href='https://maps.app.goo.gl/9XWnV1PMpbciENLa6' target="_blank">
-                            <p>Sun Garden Resort <FiExternalLink></FiExternalLink>
+                        <a href='https://maps.app.goo.gl/73bxfvEQKZzYuWP58' target="_blank">
+                            <p>Grandiflora Celebration Ballroom<FiExternalLink></FiExternalLink>
                             </p>
                         </a>
 
                     </div>
                     <div className={style['address']}>
-                        <p>str. Poiana Cerbului 1000, Baciu, CJ</p>
+                        <p>DJ178C, 727250, Rădăuți</p>
                     </div>
                 </div>
                 <TimeLapse></TimeLapse>

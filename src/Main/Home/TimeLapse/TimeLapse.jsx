@@ -13,7 +13,7 @@ export default function TimeLapse () {
 
     function dateDiffInDays () {
         const now = moment();
-        const target = moment('2024-06-08T12:00:00');
+        const target = moment('2025-05-24T12:00:00');
         const duration = moment.duration(target.diff(now));
 
         return duration;

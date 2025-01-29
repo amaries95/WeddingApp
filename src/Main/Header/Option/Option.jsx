@@ -2,8 +2,8 @@ import { HashLink } from "react-router-hash-link";
 import style from "./Option.module.css";
 import HeaderPhoto from "./HeaderPhoto/HeaderPhoto";
 import HomeLogoImage from "./HomeLogoImage.jpg";
-import RightPhoto from "./RightPhoto.jpg";
-import LeftPhoto from "./LeftPhoto.jpg";
+import RightPhoto from "./RightPhoto.png";
+import LeftPhoto from "./LeftPhoto.png";
 
 export default function Option(props) {
     function renderHeader()
