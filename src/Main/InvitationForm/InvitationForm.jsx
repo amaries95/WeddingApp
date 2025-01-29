@@ -128,17 +128,17 @@ export default function InvitationForm () {
             <div className={style['footer-container']}>
                 <div className={style['social-container']}>
                     <div className={style['social-element']}>
-                        <a href='tel: +40751437972'>
+                        <a href='tel: +40730663540'>
                             <IoCall></IoCall>
                         </a>
                     </div>
                     <div className={style['social-element']}>
-                        <a href='https://www.facebook.com/alexandru.maries28'>
+                        <a href='https://www.facebook.com/mitza.olar/'>
                             <BsFacebook></BsFacebook>
                         </a>
                     </div>
                     <div className={style['social-element']}>
-                        <a href='https://www.instagram.com/alexandru.maries28/'>
+                        <a href='https://www.instagram.com/mitza.olar/'>
                             <BsInstagram></BsInstagram>
                         </a>
                     </div>

@@ -4,11 +4,13 @@ import { Row, Col } from 'react-bootstrap';
 import Login from './Login/Login';
 import Main from './Main/Main';
 import Admin from './Admin/Admin';
+import AudioPlayer from './Audio/AudioPlayer';
 
 function App() {
   const isLoggedIn = false;
   return (
     <>
+    <AudioPlayer></AudioPlayer>
     <Router>
       <Row className="vh-100 vw-100 gx-0">
         <Col>

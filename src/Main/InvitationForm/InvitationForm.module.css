@@ -179,7 +179,7 @@
 }
 
 .social-element a svg {
-    color: var(--hover-header-color);
+    color: var(--form-background-color);
     width: 30px;
     height: 30px;
 }

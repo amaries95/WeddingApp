@@ -32,7 +32,8 @@
 .decorative-left-container {
     flex-direction: row;
     display: flex;
-    height: 2310px;
+    height: 1975px;
+    width: 1500px;
     overflow: hidden;
     align-items: flex-end;
 }
@@ -41,7 +42,8 @@
     flex-direction: row;
     display: flex;
     overflow: hidden;
-    height: 2310px;
+    height: 1975px;
+    width: 1500px;
     align-items: flex-start;
     justify-content: flex-end;
 }

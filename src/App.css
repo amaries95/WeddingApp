@@ -14,10 +14,10 @@
 }
  
 ::-webkit-scrollbar-thumb {
-  background: #e2cdaa;
+  background: var(--form-background-color);
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #d4b483;
+  background: var(--form-background-color-darker);
 }
