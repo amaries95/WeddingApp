@@ -6,9 +6,22 @@
     justify-content: center;
 }
 
+.photo-container-car {
+    width: 330px;
+    height: 330px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
 .photo-container img {
     width: 140px;
     max-height: 200px;
+}
+
+.photo-container-car img {
+    width: 250px;
+    max-height: 500px;
 }
 
 @media (max-width: 750px) {

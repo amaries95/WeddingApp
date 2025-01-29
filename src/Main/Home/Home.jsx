@@ -42,7 +42,7 @@ export default function Home () {
                             <p>
                             Looks like we’ve made it,<br/>
                             Look how far we’ve come my baby.<br/>
-                            Cand suntem impreuna, nimic nu poate sta in calea noastra. Nu mi-am imaginat niciodata ca cineva ma va face atat de fericita. Esti special, ma completezi si dai sens vietii mele. 
+                            Când suntem impreună, nimic nu poate sta in calea noastră. Nu mi-am imaginat niciodată că cineva mă va face atât de fericită. Ești special, mă completezi și dai sens vieții mele. 
 </p><span>"</span>
                         </div>
                         
@@ -54,10 +54,10 @@ export default function Home () {
 
                     <div className={style['lovers-words-container']}>
                         <div className={style['name-container']}>
-                            <p>Mitza</p>
+                            <p>Mitză</p>
                         </div>
                         <div className={style['words-container']}>
-                            <span>"</span><p>Love is a long road. Din motivul acesta mi-am ales cel mai bun copilot. Stim ca doar impreuna putem urmari ruta corecta, vom putea trece peste orice obstacol de pe traseu si vom ajunge la destinatie, impreuna. Abia astept sa vad ce aventuri ne asteapta si dupa acest eveniment din vietile noastre.</p><span>"</span>
+                            <span>"</span><p>Love is a long road. Din motivul acesta mi-am ales cel mai bun copilot. Știm că doar împreună putem urmări ruta corectă, vom putea trece peste orice obstacol de pe traseu și vom ajunge la destinație, împreună. Abia aștept să văd ce aventuri ne așteaptă și după acest eveniment din viețile noastre.</p><span>"</span>
                         </div>
                     </div>
                 </div>

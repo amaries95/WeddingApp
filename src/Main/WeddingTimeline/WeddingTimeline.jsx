@@ -9,6 +9,7 @@ import FotoSession from "./Photos/sedinta-foto.png";
 import TheEnd from "./Photos/sfarsitul-petrecerii.png";
 import Description from './Description/Description';
 import SplitLine from './SplitLine/SplitLine';
+import RoadLine from './Photos/road.png';
 import LeftDecorativePhoto from './Photos/liliac-stanga.png';
 import RightDecorativeFlower from './Photos/liliac-dreapta.png';
 import { useState } from 'react';
@@ -16,12 +17,12 @@ import { useEffect } from 'react';
 
 export default function WeddingTimeline () {
     const weddingTimelineList = [
-        { photo: BrideMeeting, title: "Intalnirea mirilor",hour: "13:30 - Casa parinteasca a mirelui", description: "Intalnirea mirilor va avea loc sub liliacului familiei Olar, plantat in anul 1951 de catre strabunica mirelui. Acest arbore a fost martor la numeroase evenimente ale familiei Olar printre care si botezul mirelui  .Vom initia aceasta zi plina cu o mica receptie la resedinta mirelui si cu sarmale delicioase rulate de cuscre."},
-        { photo: LegalCeremony, title: "Cununia Civilă",hour: "14:00 - Primaria din Radauti", description: "Vă invităm să fiți alături de noi atunci când spunem cel mai important DA din viața noastră. De asemeni, cununia civila va avea loc la resedinta familiei Olar.Nu functionam bine sub presiune, astfel vom avea nevoie de sprijinul apropiatilor pentru a ne sopti raspunsul la intrebari."},
-        { photo: SpiritualCeremony, title: "Cununia Religioasă", hour: "17:30", description: "Apoi, ușor ne vom îndrepta spre biserică, unde ne vom uni în fața lui Dumnezeu. Vă rugam să ne fiti alaturi si sa va deschideți inimile pentru noi."},
-        { photo: FotoSession, title: "Sedinta foto", hour: "17:30", description: "Având în vedere că vrem să păstrăm amintirea acestei zile toată viața, vă invităm la scurta ședința foto de după cununia religioasa. Vă rugăm să aveți răbdare și să participați la toate propunerile fotografilor. Vom profita de acest timp si pentru o scurta revizie tehnica la Dacie."},
-        { photo: Welcome, title: "Recepție Sală", hour: "19:30", description: "Aceasta zi importanta din viata noastra nu se poate termina fara o petrecere pe cinste, astfel va invitam la Grandiflora Celebration Ballrom pentru a cinsti un pahar de sampanie (2-3) si a petrece pana la rasarit in cinstea uniunii noastre."},
-        { photo: FirstDance, title: "Dansul Mirilor", hour: "20:30", description: "Bineînțeles că vor fi multe emoții, însă cu susținerea voastră, sperăm că primul nostru dans în calitate de soț-soție să fie memorabil. De preferat, fără să ne împiedicăm."},
+        { photo: BrideMeeting, title: "Întâlnirea mirilor",hour: "13:30 - Casa parintească a mirelui", description: "Întâlnirea mirilor va avea loc sub liliacului familiei Olar, plantat în anul 1951 de către străbunica mirelui. Acest arbore a fost martor la numeroase evenimente ale familiei Olar printre care și botezul mirelui. Vom iniția această zi plină cu o mică recepție la reședința mirelui și cu sarmale delicioase rulate de cuscre."},
+        { photo: LegalCeremony, title: "Cununia Civilă",hour: "14:00 - Primăria din Rădăuți", description: "Vă invităm să fiți alături de noi atunci când spunem cel mai important DA din viața noastră. De asemeni, cununia civilă va avea loc la resedința familiei Olar. Nu funcționam bine sub presiune, astfel vom avea nevoie de sprijinul apropiaților pentru a ne șopti răspunsul la întrebări."},
+        { photo: SpiritualCeremony, title: "Cununia Religioasă", hour: "17:30", description: "Apoi, ușor ne vom îndrepta spre biserică, unde ne vom uni în fața lui Dumnezeu. Vă rugam să ne fiti alături si sa va deschideți inimile pentru noi."},
+        { photo: FotoSession, title: "Sedinta foto", hour: "17:30", description: "Având în vedere că vrem să păstrăm amintirea acestei zile toată viața, vă invităm la o scurtă ședință foto de după cununia religioasa. Vă rugăm să aveți răbdare și să participați la toate propunerile fotografilor. Vom profita de acest timp și pentru o scurtă revizie tehnică la Dacie."},
+        { photo: Welcome, title: "Recepție Sală", hour: "19:30", description: "Această zi importantă din viața noastră nu se poate termina fără o petrecere pe cinste, astfel vă invităm la Grandiflora Celebration Ballrom pentru a cinsti un pahar de șampanie (2-3) și a petrece până la răsărit în cinstea uniunii noastre."},
+        { photo: FirstDance, title: "Dansul Mirilor", hour: "20:30", description: "Bineînțeles că vor fi multe emoții, însă cu susținerea voastră, sperăm ca primul nostru dans în calitate de soț-soție să fie memorabil. De preferat, fără să ne împiedicăm."},
         // { photo: WeddingCake, title: "Tortul", hour: "21:15", description: "Momentul tortului este o pauză plină de bucurie. Artificiile strălucesc, iar zâmbetele se împrăștie în jur. Pregatiți-vă papilele gustative pentru un moment dulce."},
         // { photo: TheEnd, title: "Sfarșitul Petrecerii", hour: "23:30", description: "Tot ce e frumos trebuie să aibă și un sfârșit, însă suntem siguri că o să ne revedem curând la următoarea petrecere. Înainte să vă luați la revedere, vă invităm să luați mărturiile pregătite de noi pentru a ne aminti de această zi."}
     ];
@@ -71,7 +72,11 @@ export default function WeddingTimeline () {
                 <div className={style['right-container']}>
                     {weddingTimelineList.map((element, i) => {
                         if(i % 2 !== 0){
-                            return (<Photo src={element.photo} key={Math.random() * 100} />);
+                            var isCar = false;
+                            if(i === 3) {
+                                isCar = true;
+                            }
+                            return (<Photo index={i} isCar={isCar} src={element.photo} key={Math.random() * 100} />);
                         }
                         return <Description 
                                     key={Math.random() * 100}

@@ -133,7 +133,7 @@ export default function InvitationForm () {
                         </a>
                     </div>
                     <div className={style['social-element']}>
-                        <a href='https://www.facebook.com/mitza.olar/'>
+                        <a href='https://www.facebook.com/anton.terezia/'>
                             <BsFacebook></BsFacebook>
                         </a>
                     </div>
