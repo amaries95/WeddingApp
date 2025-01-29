@@ -1,7 +1,7 @@
 import { HashLink } from "react-router-hash-link";
 import style from "./Option.module.css";
 import HeaderPhoto from "./HeaderPhoto/HeaderPhoto";
-import HomeLogoImage from "./HomeLogoImage.jpg";
+import HomeLogoImage from "./HomeLogoImage.png";
 import RightPhoto from "./RightPhoto.png";
 import LeftPhoto from "./LeftPhoto.png";
 
