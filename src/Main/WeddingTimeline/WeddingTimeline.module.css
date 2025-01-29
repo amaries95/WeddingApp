@@ -1,6 +1,6 @@
 .container {
     background-color: var(--base-background-color);
-    padding-top: 155px;
+    padding-top: 10%;
     display: flex;
     flex-direction: row;
     align-items: flex-start;

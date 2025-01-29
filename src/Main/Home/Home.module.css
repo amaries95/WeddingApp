@@ -1,6 +1,6 @@
 .home-container {
     background-color: var(--base-background-color);
-    padding-top: 170px;
+    padding-top: 8%;
     width: 100%;
     display: flex;
     flex-direction: column;
