@@ -72,11 +72,7 @@ export default function WeddingTimeline () {
                 <div className={style['right-container']}>
                     {weddingTimelineList.map((element, i) => {
                         if(i % 2 !== 0){
-                            var isCar = false;
-                            if(i === 3) {
-                                isCar = true;
-                            }
-                            return (<Photo index={i} isCar={isCar} src={element.photo} key={Math.random() * 100} />);
+                            return (<Photo index={i} src={element.photo} key={Math.random() * 100} />);
                         }
                         return <Description 
                                     key={Math.random() * 100}
@@ -106,7 +102,7 @@ export default function WeddingTimeline () {
                                         title={element.title}
                                         hour={element.hour}
                                         description={element.description} />
-                                <Photo src={element.photo} key={Math.random() * 100} />
+                                <Photo index={i} src={element.photo} key={Math.random() * 100} />
                             </div>)
                     })}
                 </div>
