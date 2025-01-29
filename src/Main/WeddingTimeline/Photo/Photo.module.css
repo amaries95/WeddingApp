@@ -8,7 +8,7 @@
 
 .photo-container-car {
     width: 330px;
-    height: 170px;
+    height: 330px;
     display: flex;
     align-items: flex-start;
     justify-content: center;
@@ -29,7 +29,15 @@
         height: auto;
         width: auto;
         margin: 20px 0px;
-    }    
+    }
+    
+    .photo-container-car {
+        width: 330px;
+        height: 170px;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+    }
 }
 
 @media (max-width: 600px) {
