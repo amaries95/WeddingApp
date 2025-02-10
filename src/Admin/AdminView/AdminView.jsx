@@ -8,7 +8,7 @@ export default function AdminView(props) {
     { field: "name", headerName: "Nume", width: 400 },
     { field: "numberOfGuests", headerName: "# Invitati", width: 200 },
     { field: "typesOfMenu", headerName: "Types of Menu", width: 200 },
-    { field: "otherDetails", headerName: "Observatii", width: 300 },
+    { field: "otherDetails", headerName: "Observatii", width: 800 },
   ];
 
   const statisticsColumns = [
